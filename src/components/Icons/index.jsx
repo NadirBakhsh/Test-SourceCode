@@ -26,17 +26,23 @@ export const Icons = {
   notify: ({ isActive }) =>
     isActive ? (
       <div className="relative w-[24px] h-[24px]">
-        <Image alt="main-logo" fill src={"/svg/main-on.svg"} />
+        <Image alt="main-logo" fill src={"/svg/notify-on.svg"} />
       </div>
     ) : (
       <div className="relative w-[24px] h-[24px]">
-        <Image alt="main-logo" fill src={"/svg/main-off.svg"} />
+        <Image alt="notify-logo" fill src={"/svg/notify-off.svg"} />
       </div>
     ),
 
   arrowDown: ({}) => (
     <div className="relative w-[14px] h-[14px]">
       <Image alt="main-logo" fill src={"/svg/arrow-down.svg"} />
+    </div>
+  ),
+
+  searchIcon: ({}) => (
+    <div className="relative w-[20px] h-[20px]">
+      <Image alt="main-logo" fill src={"/svg/searchIcon.svg"} />
     </div>
   ),
 };

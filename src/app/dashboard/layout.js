@@ -1,3 +1,4 @@
+import ProfileBar from "@/components/_EmployeeElement/ProfileBar";
 import { cn } from "@/lib/utils";
 import { Inter } from "next/font/google";
 import Image from "next/image";
@@ -28,7 +29,7 @@ export default function RootLayout({ children }) {
 
           <div className={cn("dashboard w-full relative")}>
             <div className="profile-header flex items-center border-b border-[#E9EAEC] shadow-sm  flex-1 shrink-0 h-[60px] w-full px-5 sm:px-[30px] z-10">
-              User Profile header
+              <ProfileBar />
             </div>
 
             <div className="pages px-5 flex-1 w-full shrink-0 h-auto min-h-full  sm:px-[30px] ">
