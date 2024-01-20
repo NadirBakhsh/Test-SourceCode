@@ -1,7 +1,15 @@
+import { cn } from "@/lib/utils"
 
 const Dashboard = () => {
     return (
-      <div>Dashboard</div>
+      <main>
+        
+        {/* gray card style */}
+        <div className={cn("w-full h-[300px]")}>
+
+        </div>
+
+      </main>
     )
   }
   
