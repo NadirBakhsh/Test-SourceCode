@@ -3,12 +3,12 @@ import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { TypographyH1 } from "@/components/ui/typography";
 import useFonts from "@/hooks/useFonts";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 
 const Login = () => {
-  const { kanit, inter } = useFonts();
   return (
     <div className="h-[100vh] w-full bg-background overflow-hidden relative">
       <Image
@@ -33,14 +33,14 @@ const Login = () => {
             />
           </AspectRatio>
           <div className="max-w-[508px] -mt-3">
-            <h1 className={cn("text-[24px] font-bold text-center", kanit)}>
+            <TypographyH1>
               <span className="text-[#3F4254]">The Ultimate </span>
               <span className="text-[#29A095]">HR Management Solution</span>
-            </h1>
+            </TypographyH1>
+
             <p
               className={cn(
-                "leading-[26.5px] text-[12px] text-[#7E8299] font-medium text-center mt-3 hidden sm:block",
-                inter
+                "leading-[26.5px] text-[12px] text-[#7E8299] font-medium text-center mt-3 hidden sm:block"
               )}
             >
               At SourceCode, we have a reliable, secure and adaptable HR
@@ -53,8 +53,7 @@ const Login = () => {
 
         <div
           className={cn(
-            "flex-1 h-full shrink-0 flex  w-full justify-center mt-10 sm:mt-0 sm:items-center items-start",
-            inter
+            "flex-1 h-full shrink-0 flex  w-full justify-center mt-10 sm:mt-0 sm:items-center items-start"
           )}
         >
           {/* login Form */}
