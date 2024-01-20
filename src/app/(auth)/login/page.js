@@ -3,9 +3,12 @@ import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import useFonts from "@/hooks/useFonts";
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 
 const Login = () => {
+  const { kanit, inter } = useFonts();
   return (
     <div className="h-[100vh] w-full bg-background overflow-hidden relative">
       <Image
@@ -30,11 +33,16 @@ const Login = () => {
             />
           </AspectRatio>
           <div className="max-w-[508px] -mt-3">
-            <h1 className="text-[24px] font-bold text-center">
+            <h1 className={cn("text-[24px] font-bold text-center", kanit)}>
               <span className="text-[#3F4254]">The Ultimate </span>
               <span className="text-[#29A095]">HR Management Solution</span>
             </h1>
-            <p className="leading-[26.5px] text-[12px] text-[#7E8299] text-center mt-3 hidden sm:block">
+            <p
+              className={cn(
+                "leading-[26.5px] text-[12px] text-[#7E8299] font-medium text-center mt-3 hidden sm:block",
+                inter
+              )}
+            >
               At SourceCode, we have a reliable, secure and adaptable HR
               management built from the ground up.We are determined to help our
               employees to give their best efforts every day to achieve the
@@ -43,7 +51,12 @@ const Login = () => {
           </div>
         </div>
 
-        <div className="flex-1 h-full shrink-0 flex  w-full justify-center mt-10 sm:mt-0 sm:items-center items-start">
+        <div
+          className={cn(
+            "flex-1 h-full shrink-0 flex  w-full justify-center mt-10 sm:mt-0 sm:items-center items-start",
+            inter
+          )}
+        >
           {/* login Form */}
           <div className="w-full max-w-[513px] h-[646px] sm:gradient-border p-5 py-12 sm:p-[50px] flex flex-col items-center">
             <Icons.logo />
