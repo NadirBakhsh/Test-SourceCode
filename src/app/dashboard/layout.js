@@ -1,7 +1,7 @@
 import ProfileBar from "@/components/_EmployeeElement/ProfileBar";
 import { cn } from "@/lib/utils";
 import { Inter } from "next/font/google";
-import Image from "next/image";
+import 'react-circular-progressbar/dist/styles.css';
 
 const inter = Inter({ subsets: ["latin"] });
 

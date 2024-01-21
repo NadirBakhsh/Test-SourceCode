@@ -45,4 +45,11 @@ export const Icons = {
       <Image alt="main-logo" fill src={"/svg/searchIcon.svg"} />
     </div>
   ),
+
+  growUpIcon: ({}) => (
+    <div className="relative w-[20px] h-[20px]">
+      <Image alt="main-logo" fill src={"/svg/grow-up.svg"} />
+    </div>
+  ),
+
 };
