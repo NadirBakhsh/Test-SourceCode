@@ -52,4 +52,28 @@ export const Icons = {
     </div>
   ),
 
+  dashboard: ({}) => (
+    <div className="relative w-[20px] h-[20px]">
+      <Image alt="main-logo" fill src={"/svg/dashboard.svg"} />
+    </div>
+  ),
+
+  setting: ({}) => (
+    <div className="relative w-[20px] h-[20px]">
+      <Image alt="main-logo" fill src={"/svg/setting.svg"} />
+    </div>
+  ),
+
+  menuBack: ({}) => (
+    <div className="relative w-[26px] h-[26px]">
+      <Image alt="main-logo" fill src={"/svg/menu-back.svg"} />
+    </div>
+  ),
+
+  hrcWhiteLogo: ({}) => (
+    <div className="relative w-[122px] h-[31px]">
+      <Image alt="main-logo" fill src={"/images/hrc-white-logo.png"} />
+    </div>
+  ),
+
 };
