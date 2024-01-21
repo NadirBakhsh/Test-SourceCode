@@ -27,17 +27,19 @@ export function CounterCard({ title, count, describe, className }) {
           </div>
         </div>
         <div className="relative flex items-center justify-center">
-          <div className="w-[64px] h-[64px]">
+          <div className="w-[64px] h-[64px] font-medium">
             <CircularProgressbar
               styles={buildStyles({
                 pathColor: `#fff`,
                 textColor: "#fff",
                 trailColor: "#d6d6d6",
                 strokeLinecap: "round",
-                textSize: "12px",
+                textSize: "16px",
+                pathTransitionDuration: 0.5,
+                strokeWidth: 16,
               })}
               value={percentage}
-              text={`${percentage}%`}
+              text={`+${percentage}%`}
             />
           </div>
         </div>
