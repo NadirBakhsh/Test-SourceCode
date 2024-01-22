@@ -7,7 +7,6 @@ const useAuth = () => {
         router.replace('/') 
     }
 
-
   return {
     logout
   }
