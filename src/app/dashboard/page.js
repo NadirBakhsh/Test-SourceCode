@@ -1,7 +1,14 @@
+"use client"
 import { CounterCard } from "@/components/CounterCard";
 import { cn } from "@/lib/utils";
+import ProtectedMiddleware from "@/middleware/ProtectedMiddleware";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 const Dashboard = () => {
+  
+ 
+
   return (
     <main>
       <div className="mt-10">
@@ -22,4 +29,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default ProtectedMiddleware(Dashboard);

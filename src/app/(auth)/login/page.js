@@ -1,14 +1,63 @@
+"use client";
 import { Icons } from "@/components/Icons";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { TypographyH1 } from "@/components/ui/typography";
-import useFonts from "@/hooks/useFonts";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 
 const Login = () => {
+  const router = useRouter();
+
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleLogin = async () => {
+    if (!username) alert("email is empty");
+    if (!password) alert("password is empty");
+
+    try {
+      const response = await fetch("http://localhost:3000/api/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: username,
+          password,
+        }),
+      });
+
+      const { isAuth } = await response.json();
+
+      if (isAuth) {
+        console.log("isAuth", isAuth);
+        localStorage.setItem("isAuth", isAuth);
+        router.replace("/dashboard");
+      } else {
+        console.log("isAuth", isAuth);
+
+        console.error("Login failed");
+      }
+    } catch (error) {
+      console.log("isAuth", isAuth);
+
+      console.error("Error during login:");
+    }
+  };
+
+  useEffect(() => {
+    const isAuth = localStorage.getItem("isAuth");
+    if (isAuth) {
+      router.replace("/dashboard");
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <div className="h-[100vh] w-full bg-background overflow-hidden relative">
       <Image
@@ -63,9 +112,21 @@ const Login = () => {
             <p className="text-sm mt-10">Log in to start your session</p>
 
             <div className="w-full flex flex-col gap-7 mt-10">
-              <Input placeholder={"Employee Code"} />
-              <Input placeholder={"Password"} />
-              <Button className="w-full mt-2">LOG IN</Button>
+              <Input
+                placeholder={"Employee email"}
+                type="text"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+              />
+              <Input
+                placeholder={"Password"}
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <Button className="w-full mt-2" onClick={handleLogin}>
+                LOG IN
+              </Button>
             </div>
 
             <div className="mt-9">
